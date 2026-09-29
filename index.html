@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alternate String Combiner</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5568d9;
+        }
+
+        .result-box {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f3f4ff;
+            border-radius: 8px;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            min-height: 45px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Alternate String Combiner</h2>
+
+        <label for="str1">Enter First String:</label>
+        <input type="text" id="str1" placeholder="Enter first string">
+
+        <label for="str2">Enter Second String:</label>
+        <input type="text" id="str2" placeholder="Enter second string">
+
+        <button onclick="combineStrings()">Combine Strings</button>
+
+        <div class="result-box">
+            <span id="result">Result will appear here</span>
+        </div>
+
+    </div>
+
+    <script>
+        function combineStrings() {
+
+            let str1 = document.getElementById("str1").value;
+            let str2 = document.getElementById("str2").value;
+
+            let result = "";
+
+            let maxLength = Math.max(str1.length, str2.length);
+
+            for (let i = 0; i < maxLength; i++) {
+
+                if (i < str1.length) {
+                    result += str1[i];
+                }
+
+                if (i < str2.length) {
+                    result += str2[i];
+                }
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+
+</body>
+
+</html>
